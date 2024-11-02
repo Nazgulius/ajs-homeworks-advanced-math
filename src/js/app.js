@@ -1,4 +1,4 @@
 // TODO: write your code here
-import ErrorRepository from './ErrorRepository.js';
+import CharacterNew from './CharacterNew.js';
 
 console.log('Работает');
