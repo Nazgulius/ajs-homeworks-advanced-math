@@ -6,11 +6,14 @@ console.log('Работает');
 let charA = new Magician('Mage');
 
 console.log(charA);
-console.log(charA.attack);
+console.log('базовая атака ' + charA.attack);
+console.log('базовая stoned ' + charA.stoned);
+
 charA.attack = 2;
-console.log(charA.attack);
-charA.stoned = 2;
-console.log(charA.attack);
+console.log('атака расстояние 2 ' + charA.attack);
+console.log('stoned 2 ' + charA.stoned);
 
-
+charA.stoned = true;
+console.log('атака ' + charA.attack);
+console.log('stoned ' + charA.stoned);
 

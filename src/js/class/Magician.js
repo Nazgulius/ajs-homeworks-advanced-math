@@ -1,27 +1,33 @@
-import Character from "../Character";
+import Character from "../Character.js";
 
 export default class Magician extends Character {
-  constructor(name, type = 'Magician') {
+  #stoned = false
+  constructor(name, type = 'Magician', stoned, distance = 1) {
     super(name, type);
     this._attack = 100;
-    this.defence = 40;
+    this.defence = 40;    
+    this.distance = distance;
   }
 
   get attack() { 
-    return this._attack;
+    const basicAttack = 100 - ((this.distance - 1) * (10 * (100 / 100)));
+
+    if (!this.#stoned) {
+      return basicAttack;
+    }
+
+    return basicAttack - Math.log2(this.distance) * 5; 
   }
 
-  set attack(x) {
-    let attack = 100;
-    this._attack = attack - ((x - 1) * 10 * (attack / 100));
+  set attack(x) {    
+    this.distance = x;    
   }
 
   get stoned() {
-    return this._attack;
+    return this.#stoned;
   }
 
   set stoned(x) {
-    let attack = 100 - ((x - 1) * 10 * (100 / 100));
-    this._attack = attack - Math.log2(x) * 5; 
+    this.#stoned = x;
   }
 }
