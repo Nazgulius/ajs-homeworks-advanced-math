@@ -1,27 +1,28 @@
 import Character from "../Character.js";
+import AttackModification from "./AttackModification.js";
 
 export default class Daemon extends Character {
-  constructor(name, type = 'Daemon') {
+  #stoned = false;
+  constructor(name, type = 'Daemon', distance = 1) {
     super(name, type);
     this._attack = 100;
     this.defence = 40;
+    this.distance = distance;
   }
 
   get attack() { 
-    return this._attack;
+    return AttackModification.modAttackDistance(this._attack, this.distance, this.#stoned);
   }
 
   set attack(x) {
-    let attack = 100;
-    this._attack = attack - ((x - 1) * 10 * (attack / 100));
+    this.distance = x;
   }
 
   get stoned() {
-    return this._attack;
+    return this.#stoned;
   }
 
   set stoned(x) {
-    let attack = 100 - ((x - 1) * 10 * (100 / 100));
-    this._attack = attack - Math.log2(x) * 5; 
+    this.#stoned = x;
   }
 }

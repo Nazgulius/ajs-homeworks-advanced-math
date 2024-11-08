@@ -9,7 +9,8 @@ test('create Daemon', () => {
     health: 100,
     level: 1,
     _attack: 100,
-    defence: 40,
+    defence: 40,    
+    distance: 1,
   }
 
   expect(charecter).toEqual(currect);
@@ -26,13 +27,14 @@ test('атака на расстоянии', () => {
 });
 
 test('атака на расстоянии c дурманом', () => {  
-  charecter.stoned = 2;
+  charecter.stoned = true;
+  charecter.attack = 2;
 
   expect(charecter.attack).toBe(85);
 });
 
 test('дурман', () => {  
-  charecter.stoned = 2;
+  charecter.stoned = true;
 
-  expect(charecter.stoned).toBe(85);
+  expect(charecter.stoned).toBe(true);
 });

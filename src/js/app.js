@@ -7,13 +7,25 @@ let charA = new Magician('Mage');
 
 console.log(charA);
 console.log('базовая атака ' + charA.attack);
-console.log('базовая stoned ' + charA.stoned);
 
 charA.attack = 2;
 console.log('атака расстояние 2 ' + charA.attack);
-console.log('stoned 2 ' + charA.stoned);
+charA.attack = 3;
+console.log('атака расстояние 3 ' + charA.attack);
+charA.attack = 4;
+console.log('атака расстояние 4 ' + charA.attack);
+charA.attack = 5;
+console.log('атака расстояние 5 ' + charA.attack);
 
 charA.stoned = true;
 console.log('атака ' + charA.attack);
 console.log('stoned ' + charA.stoned);
 
+charA.attack = 2;
+console.log('атака расстояние 2 ' + charA.attack);
+charA.attack = 3;
+console.log('атака расстояние 3 ' + charA.attack);
+charA.attack = 4;
+console.log('атака расстояние 4 ' + charA.attack);
+charA.attack = 5;
+console.log('атака расстояние 5 ' + charA.attack);
