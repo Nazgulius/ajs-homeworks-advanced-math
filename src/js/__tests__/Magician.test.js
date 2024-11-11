@@ -11,6 +11,7 @@ test('create Magician', () => {
     _attack: 100,
     defence: 40,
     distance: 1,
+    _stoned: false,
   }
 
   expect(charecter).toEqual(currect);

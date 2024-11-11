@@ -1,9 +1,10 @@
 // TODO: write your code here
 import Magician from './class/Magician.js';
+import Daemon from './class/Daemon.js';
 
 console.log('Работает');
 
-let charA = new Magician('Mage');
+let charA = new Daemon('Daemon');
 
 console.log(charA);
 console.log('базовая атака ' + charA.attack);
